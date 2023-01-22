@@ -1,0 +1,168 @@
+b {
+    font-size: 50px;
+    border-right: 3px solid #29ABE2;
+    padding-right: 30px;
+}
+
+
+.content-container {
+    margin-top: 40px;
+    margin-left: 155px;
+}
+
+.content-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.content-subtitle {
+    margin-left: 30px;
+    color: #2A3647;
+}
+
+.summary {
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.summary-container2 {
+    min-width: 580px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.summary-div {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-number-size {
+    font-size: 64px;
+}
+
+.summary-deadline-number-size {
+    font-size: 60px;
+}
+
+.summary-square {
+    height: 170px;
+    width: 170px;
+    border-radius: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-square:hover {
+    cursor: pointer;
+    background-color: #2A3647;
+    color: white;
+    transition: ease-in-out 225ms;
+    height: 160px;
+    padding: 5px;
+}
+
+.summary-deadline-div {
+    height: 150px;
+    background: white;
+    width: 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-deadline-div:hover {
+    cursor: pointer;
+    background-color: #2A3647;
+    color: white;
+    transition: ease-in-out 225ms;
+    height: 160px;
+    padding: 5px;
+}
+
+.summary-deadline-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-deadline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.urgent-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.summary-todo-square {
+    height: 170px;
+    background: white;
+    width: 270px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-todo-square:hover {
+    cursor: pointer;
+    background-color: #2A3647;
+    color: white;
+    transition: ease-in-out 225ms;
+    height: 160px;
+    padding: 5px;
+}
+
+.summary-icon {
+    border-radius: 100%;
+    padding: 10px;
+    object-fit: contain;
+}
+
+.line {
+    border: 1px solid #D1D1D1;
+    height: 81px;
+    margin-top: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.greeting-user{
+    width: 340px;
+}
+
+.greeting{
+    font-size: 48px;
+    width: max-content;
+}
+
+.user-name {
+    color: #29ABE2;
+    font-size: 64px;
+}

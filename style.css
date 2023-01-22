@@ -104,11 +104,17 @@ b {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 20%;
+    width: 230px;
     height: 100vh;
     flex-direction: column;
     background-color: #2A3647;
     color: white;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    background-color: #F6F7F8;
 }
 
 /* Styling for scrollbar begin*/
