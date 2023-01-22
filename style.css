@@ -1,37 +1,42 @@
-body{
+body {
     margin: 0px;
 }
 
-a{
+a {
     text-decoration: none;
     color: White;
 }
 
-.header{
+b {
+    font-size: 50px;
+}
+
+.header {
     height: 70px;
     width: 100%;
     color: black;
 }
 
-.header-div{
+.header-div {
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 2px 1px 6px 1px #a9a9a9;
+    background: White;
 }
 
-.header-title{
+.header-title {
     color: black;
 }
 
-.help-icon{
+.help-icon {
     height: 30px;
     width: 30px;
 }
 
-.profil-img{
+.profil-img {
     height: 30px;
     width: 30px;
     border-radius: 100%;
@@ -42,52 +47,54 @@ a{
     justify-content: center;
 }
 
-.header-help-profil-div{
+.header-help-profil-div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 85px;
 }
 
-.logo{
+.logo {
     height: 122px;
     width: 100px;
     background-color: white;
     color: white;
 }
-.nav-icon{
+
+.nav-icon {
     height: 20px;
     width: 20px;
 }
 
-.nav-container{
+.nav-container {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.nav-link{
+
+.nav-link {
     text-align: left;
-    width: 90px;  
+    width: 90px;
 }
 
-.nav-div{
+.nav-div {
     display: flex;
     height: 35px;
     width: 100%;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.nav-div:hover{
+.nav-div:hover {
     cursor: pointer;
-    background-color:#3e4e64;
+    background-color: #3e4e64;
     transition: 225ms ease-in-out;
 }
 
-.desktop{
+.desktop {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -99,7 +106,156 @@ a{
 }
 
 
-.main-container{
+.main-container {
     width: 100%;
     display: flex;
+    background-color: #F6F7F8;
 }
+
+.content-title{
+    margin-bottom: 30px;
+}
+
+.content-container {
+    margin-top: 70px;
+    margin-left: 155px;
+}
+
+.addTask-container {
+    display: flex;
+    width: 1000px;
+}
+
+.left-side-AddTask-container {
+    width: 100%;
+    display: flex;
+    background-color: red;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.right-side-AddTask-container {
+    width: 100%;
+    background-color: blue;
+}
+
+.left-side-div{
+    margin-bottom: 20px;
+}
+
+.addTask-input-title{
+    font-size: 21px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.addTask-div{
+    width: 100%;
+   
+}
+
+.input-text-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.input-div{
+    width: 90%;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid #D1D1D1;
+    
+}
+
+.description-div{
+    width: 90%;
+    height: 120px;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+}
+
+.dropdown-btn{
+    background: white;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 150px;
+    font-size: 16px;
+    border: 1px solid #D1D1D1;
+}
+
+.dropdown-btn:hover{
+    cursor: pointer;
+}
+
+.dropdown-closed{
+    overflow-y: hidden;
+    max-height: 0;
+    width: 100%;
+    transition: ease-in-out 225ms;
+}
+
+.dropdown-open{
+    overflow-y: visible;
+    width: 100%;
+    max-height: 150px;
+    transition: ease-in-out 225ms;
+}
+
+.addHeight{
+    height: 155px;
+    transition: ease-in-out 225ms;
+}
+
+.listedElement{
+    height: 30px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.listedElement:hover{
+    cursor: pointer;
+    background-color: #efefef;
+    transition: ease-in-out 225ms;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

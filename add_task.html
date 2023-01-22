@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Join</title>
 </head>
 
@@ -47,7 +48,59 @@
                 </div>
             </div>
 
+            <div class="content-container">
+                <div class="content-title"><b>Add Task</b></div>
+                <div class="addTask-container">
+                    <div class="left-side-AddTask-container">
+                        <div class="left-side-div">
+                            <div class="addTask-input-title">Title</div>
+                            <div class="addTask-div"><input class="input-div" placeholder="Enter a title"></div>
+                        </div>
+                        <div class="left-side-div">
+                            <div class="addTask-input-title">Description</div>
+                            <div class="addTask-div"><textarea class="description-div"
+                                    placeholder="Enter a Description"></textarea></div>
+                        </div>
+                        <div class="left-side-div">
+                            <div class="addTask-input-title">Category</div>
+                            <div onclick="openDropdown(1)" class="addTask-div">
+                                <div class="dropdown-btn">
+                                    <div class="input-text-title">Select task category</div>
+                                    <div id="dropdownTask1" class="dropdown-closed">
+
+                                        <li class="listedElement">New category</li>
+                                        <li class="listedElement">Sales</li>
+                                        <li class="listedElement">Backoffice</li>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="left-side-div">
+                            <div class="addTask-input-title">Assigned to</div>
+                            <div onclick="openDropdown(2)" class="addTask-div">
+                                <div class="dropdown-btn">
+                                    <div class="input-text-title">Select contacts to assign</div>
+                                    <div id="dropdownTask2" class="dropdown-closed">
+
+                                        <li class="listedElement">You <input type="checkbox"></li>
+                                        <li class="listedElement">Invite new contact <img style="height:15px; margin-right: 4px" src="assets/img/contacts.png" alt=""></li>
+                                      
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-side-AddTask-container"></div>
+                </div>
+
+            </div>
         </div>
+
+
 
     </div>
 
