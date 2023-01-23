@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/board.css">
+    <script src="js/board.js"></script>
     <title>Join</title>
 </head>
 
@@ -47,7 +49,37 @@
                 </div>
             </div>
 
+            <div class="content-container">
+                <div class="content-title"><b>Board</b>
+                    <div class="search-addTask-div">
+                        <div class="search-div"><input class="search-input" placeholder="Find Task">
+                            <div class="border"></div> <img src="assets/img/lens.png">
+                        </div>
+
+                        <div><button onClick="openAddNewTask()" class="addTask-div">Add Task +</button></div>
+                    </div>
+                </div>
+
+                <div class="board-container">
+                    <div class="board-field">
+                        <div class="board-title">To do <img class="add" src="assets/img/add_button.png"></div>
+                    </div>
+                    <div class="board-field">
+                        <div class="board-title">In progress <img class="add" src="assets/img/add_button.png"></div>
+                    </div>
+                    <div class="board-field">
+                        <div class="board-title">Awaiting Feedback <img class="add" src="assets/img/add_button.png"></div>
+                    </div>
+                    <div class="board-field">
+                        <div class="board-title">Done <img class="add" src="assets/img/add_button.png"></div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
+
+
 
     </div>
 
