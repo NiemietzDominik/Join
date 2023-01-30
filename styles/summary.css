@@ -5,12 +5,6 @@ b {
 }
 
 
-
-.content-subtitle {
-    margin-left: 30px;
-    color: #2A3647;
-}
-
 .summary {
     max-width: 1000px;
     display: flex;
@@ -143,7 +137,7 @@ b {
 }
 
 .greeting-user{
-    width: 340px;
+    padding-left: 30px;
 }
 
 .greeting{

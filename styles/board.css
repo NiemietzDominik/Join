@@ -3,13 +3,23 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    max-width: 1080px;
 }
 
 .search-addTask-div {
     display: flex;
     width: fit-content;
     height: fit-content;
+}
+
+.content-container-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+    flex-direction: column;
 }
 
 .search-div {
@@ -40,7 +50,7 @@
     margin-right: 15px;
 }
 
-.addTask-div {
+.addingTask {
     height: 50px;
     width: 140px;
     border-radius: 10px;
@@ -50,21 +60,68 @@
     border: 1px solid black;
 }
 
+.addingTask:hover {
+    cursor: pointer;
+    background: rgb(0, 195, 255);
+    transition: ease-in-out 200ms;
+}
+
 .addTask-div:hover {
     background: rgb(0, 195, 255);
     transition: ease-in-out 200ms;
 }
 
+.addTask-template {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.addTask-template-wrapper {
+    background: white;
+    height: 800px;
+    width: 1000px;
+    border-radius: 30px;
+    padding: 30px;
+    animation-name: slide-in;
+    animation-duration: 225ms;
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(1500px);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(1500px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
 .board-container {
-    width: 1080px;
+    width: 100%;
     height: 490px;
     display: flex;
     justify-content: space-between;
 }
 
 .board-field {
-    width: 250px;
-    
+    width: 290px;
+
 }
 
 .board-title {
