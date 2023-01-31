@@ -56,6 +56,12 @@ b {
     color: white;
 }
 
+.new-contact-btn:hover{
+    cursor: pointer;
+    background: rgb(0, 195, 255);
+    transition: ease-in-out 125ms;
+}
+
 .new-contact-div{
     display: flex;
     justify-content: end;
