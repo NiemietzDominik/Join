@@ -16,31 +16,95 @@
 <body>
     <div class="main-container">
 
-        <div id="greybackground" onclick="closeAddNewTask()" class="d-none"></div>
+        <div id="greybackground" onclick="closeNewContactDialog()" class="d-none"></div>
+
+        <div id="new-contact-container" class="d-none">
+            <div id="new-contactId" class="new-contact-template-wrapper">
+                <div class="left-side-new-contact-container">
+                    <div> <img src="assets/img/logo_add_new_contact.png"></div>
+                    <div style="position:relative">
+                        <div style="font-size:  61px; font-weight: 700;">Add contact</div>
+                        <div style="font-size: 27px; font-weight: 400;">Tasks are better with a Team!</div>
+                        <div class="mini-border"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="right-side-container-structure">
+
+                    <div style="position: absolute; top: 30px; right: 30px; height: 15px; cursor:pointer;"><img
+                            src="assets/img/x.png"></div>
+                    <div class="right-side-new-contact-container">
+                        <div class="placeholder-div">
+                            <img style="height:50px; width:40px;" src="assets\img\placeholder_profil.png">
+                        </div>
+                        <div>
+                            <div class="input-container">
+
+                                <div class="input-div"><input class="input-field" placeholder="Name" type="text"> <img
+                                        class="contact-mini-icon" src="assets/img/contact_icon.png" alt=""></div>
+                                <div class="input-div"><input class="input-field" placeholder="Email" type="email"> <img
+                                        class="contact-mini-icon" src="assets/img/email_icon.png"> </div>
+                                <div class="input-div"><input class="input-field" placeholder="Phone" type="number">
+                                    <img class="contact-mini-icon" src="assets/img/phone_icon.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="footer-div-contact">
+                        <button class="footer-btn-clear-contact-form">Cancel <div class="cancel_x">x</div></button>
+                        <button class="footer-btn-create-contact">Create contact<img
+                                src="assets/img/clear.png"></button>
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
 
         <div class="desktop">
             <img class="logo" src="assets/img/logo.png">
 
             <div class="nav-container">
-                <div class="nav-div"><img class="nav-icon" src="assets/img/summary.png">
+                <a class="nav-div" href="index.html">
+                    <div class="nav-div"><img class="nav-icon" src="assets/img/summary.png">
 
-                    <div class="nav-link"><a href="index.html">Summary</a></div>
-                </div>
-                <div class="nav-div"><img class="nav-icon" src="assets/img/board.png">
-                    <div class="nav-link"><a href="board.html">Board</a> </div>
-                </div>
-                <div class="nav-div"><img class="nav-icon" src="assets/img/add_task.png">
-                    <div class="nav-link"><a href="add_task.html">Add Task</a> </div>
-                </div>
-                <div class="nav-div"><img class="nav-icon" src="assets/img/contacts.png">
-                    <div class="nav-link"><a href="contacts.html">Contacts</a> </div>
-                </div>
+                        <div class="nav-link">Summary</div>
+                    </div>
+                </a>
+                <a class="nav-div" href="board.html">
+                    <div class="nav-div"><img class="nav-icon" src="assets/img/board.png">
+                        <div class="nav-link">Board </div>
+                    </div>
+                </a>
+                <a class="nav-div" href="add_task.html">
+                    <div class="nav-div"><img class="nav-icon" src="assets/img/add_task.png">
+                        <div class="nav-link">Add Task </div>
+                    </div>
+                </a>
+                <a class="nav-div" href="contacts.html">
+                    <div class="nav-div"><img class="nav-icon" src="assets/img/contacts.png">
+                        <div class="nav-link">Contacts </div>
+                    </div>
+                </a>
             </div>
 
             <div class="nav-container">
-                <div class="nav-div"><img class="nav-icon" src="assets/img/info.png">
-                    <div class="nav-link"><a href="legal_notice.html">Legal notice</a> </div>
-                </div>
+
+                <a class="nav-div" href="legal_notice.html">
+                    <div class="nav-div"><img class="nav-icon" src="assets/img/info.png">
+                        <div class="nav-link">Legal notice </div>
+                    </div>
+                </a>
+
             </div>
         </div>
 
@@ -49,7 +113,7 @@
                 <div class="header-title"> Kanban Project Management Tool</div>
                 <div class="header-help-profil-div">
                     <div class="help-icon"><img src="assets/img/help.png" alt=""></div>
-                    <div><img class="profil-img" src="assets/img/placeholder.png" alt=""></div>
+                    <div><img class="profil-img" src="assets/img/placeholder_profil.png" alt=""></div>
                 </div>
 
             </div>
@@ -66,7 +130,8 @@
 
                     <div class="view-contact"></div>
 
-                    <div onclick="openNewContactDialog()" class="new-contact-div"><button class="new-contact-btn">New contact <img src="assets\img\new_contact.png"></button></div>
+                    <div onclick="openNewContactDialog()" class="new-contact-div-btn"><button class="new-contact-btn">
+                            New contact <img src="assets\img\new_contact.png"></button></div>
 
                 </div>
             </div>

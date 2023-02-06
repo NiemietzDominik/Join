@@ -1,4 +1,4 @@
-function openAddNewTask(){
+function openAddNewTaskDialog(){
     document.getElementById('greybackground').classList.remove('d-none');
     document.getElementById('greybackground').classList.add('greyBackground');
 
@@ -6,7 +6,7 @@ function openAddNewTask(){
     document.getElementById('addTask-container').classList.add('addTask-template');
 }
 
-function closeAddNewTask(){
+function closeAddNewTaskDialog(){
     document.getElementById('addTask-container').classList.remove('addTask-template');
     document.getElementById('addTask-container').classList.add('d-none');
 
