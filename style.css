@@ -17,11 +17,11 @@ b {
     font-size: 50px;
 }
 
-.d-none{
+.d-none {
     display: none;
 }
 
-.greyBackground{
+.greyBackground {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -30,8 +30,8 @@ b {
     z-index: 3;
 }
 
-.content-format{
-        display: flex;
+.content-format {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -56,6 +56,7 @@ b {
     margin-bottom: 30px;
     width: 100%;
 }
+
 .content-subtitle {
     margin-left: 30px;
     color: #2A3647;
@@ -77,6 +78,7 @@ b {
     align-items: center;
     box-shadow: 2px 1px 6px 1px #a9a9a9;
     background: White;
+    z-index: 1;
 }
 
 .header-title {
@@ -241,6 +243,6 @@ b {
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }

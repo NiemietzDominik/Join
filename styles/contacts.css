@@ -71,15 +71,15 @@ b {
 }
 
 .new-contact-template {
-    height: 100%;
-    width: 100%;
     position: absolute;
     z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     color: white;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
 }
 
 .new-contact-container {
@@ -196,7 +196,7 @@ b {
 .right-side-container-structure {
     position: relative;
     display: flex;
-    padding-right:30px;
+    padding-right: 30px;
 }
 
 .footer-div-contact {
@@ -260,21 +260,83 @@ b {
     text-align: center;
 }
 
-.input-field{
-    height: 97%;
+.input-field {
     width: 420px;
     color: black;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 21px;
+    font-size: 19px;
     border: none;
     outline: none;
 }
 
-.contact-mini-icon{
+.contact-mini-icon {
     width: 25px;
     object-fit: contain;
     height: 20px;
     padding-right: 10px;
+}
+
+.scroll-div {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    height: fit-content;
+    background-color: rgb(227, 227, 227);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.char-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.pick-user-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.shortcut-name {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background: blue;
+    color: white;
+}
+
+.contactList-userName {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+}
+
+.contactList-userEmail {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
 }

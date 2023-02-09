@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/contacts.css">
-
     <script src="script.js"></script>
+   
     <script src="js/contacts.js"></script>
+    <script src="js/mini_backend.js"></script>
+    <script>
+        setURL('https://dominik-niemietz.developerakademie.com/smallest_backend_ever');
+    </script>
+   
     <title>Join</title>
 </head>
 
-<body>
+<body onload="contactList()">
     <div class="main-container">
 
         <div id="greybackground" onclick="closeNewContactDialog()" class="d-none"></div>
@@ -33,7 +38,8 @@
 
                 <div class="right-side-container-structure">
 
-                    <div style="position: absolute; top: 30px; right: 30px; height: 15px; cursor:pointer;"><img
+                    <div onclick="closeNewContactDialog()"
+                        style="position: absolute; top: 30px; right: 30px; height: 15px; cursor:pointer;"><img
                             src="assets/img/x.png"></div>
                     <div class="right-side-new-contact-container">
                         <div class="placeholder-div">
@@ -42,11 +48,14 @@
                         <div>
                             <div class="input-container">
 
-                                <div class="input-div"><input class="input-field" placeholder="Name" type="text"> <img
-                                        class="contact-mini-icon" src="assets/img/contact_icon.png" alt=""></div>
-                                <div class="input-div"><input class="input-field" placeholder="Email" type="email"> <img
-                                        class="contact-mini-icon" src="assets/img/email_icon.png"> </div>
-                                <div class="input-div"><input class="input-field" placeholder="Phone" type="number">
+                                <div class="input-div"><input id="newContactName" class="input-field" placeholder="Name"
+                                        type="text"> <img class="contact-mini-icon" src="assets/img/contact_icon.png"
+                                        alt=""></div>
+                                <div class="input-div"><input id="newContactEmail" class="input-field"
+                                        placeholder="Email" type="email"> <img class="contact-mini-icon"
+                                        src="assets/img/email_icon.png"> </div>
+                                <div class="input-div"><input id="newContactNumber" class="input-field"
+                                        placeholder="Phone" type="number">
                                     <img class="contact-mini-icon" src="assets/img/phone_icon.png">
                                 </div>
                             </div>
@@ -55,8 +64,9 @@
 
 
                     <div class="footer-div-contact">
-                        <button class="footer-btn-clear-contact-form">Cancel <div class="cancel_x">x</div></button>
-                        <button class="footer-btn-create-contact">Create contact<img
+                        <button onclick="closeNewContactDialog()" class="footer-btn-clear-contact-form">Cancel <div
+                                class="cancel_x">x</div></button>
+                        <button onclick="createNewContact()" class="footer-btn-create-contact">Create contact<img
                                 src="assets/img/clear.png"></button>
                     </div>
 
@@ -119,7 +129,13 @@
             </div>
 
             <div class="contacts-board">
-                <div class="contacts-container"></div>
+                <div class="contacts-container">
+
+                    <div id="contactList" class="scroll-div">
+
+            
+                    </div>
+                </div>
 
                 <div class="view-contact-container">
 
@@ -128,7 +144,10 @@
                         <div class="content-subtitle">Better with a team</div>
                     </div>
 
-                    <div class="view-contact"></div>
+                    <div class="view-contact">
+
+
+                    </div>
 
                     <div onclick="openNewContactDialog()" class="new-contact-div-btn"><button class="new-contact-btn">
                             New contact <img src="assets\img\new_contact.png"></button></div>

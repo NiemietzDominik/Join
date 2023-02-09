@@ -1,15 +1,11 @@
-function openAddNewTaskDialog(){
-    document.getElementById('greybackground').classList.remove('d-none');
-    document.getElementById('greybackground').classList.add('greyBackground');
-
+function openAddNewTaskDialog() {
+    openGreyBackground()
     document.getElementById('addTask-container').classList.remove('d-none');
     document.getElementById('addTask-container').classList.add('addTask-template');
 }
 
-function closeAddNewTaskDialog(){
+function closeAddNewTaskDialog() {
     document.getElementById('addTask-container').classList.remove('addTask-template');
     document.getElementById('addTask-container').classList.add('d-none');
-
-    document.getElementById('greybackground').classList.remove('greyBackground');
-    document.getElementById('greybackground').classList.add('d-none');
+    closeGreyBackground();
 }

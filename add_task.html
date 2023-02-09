@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="styles/add_task.css">
     <script src="script.js"></script>
     <script src="js/add_task.js"></script>
+    <script src="js/mini_backend.js"></script>
+    <script>
+        setURL('https://dominik-niemietz.developerakademie.com/smallest_backend_ever');
+    </script>
     <title>Join</title>
 </head>
 
@@ -70,11 +74,12 @@
                         <div class="left-side-AddTask-container">
                             <div class="left-side-div">
                                 <div class="addTask-input-title">Title</div>
-                                <div class="addTask-div"><input class="input-div" placeholder="Enter a title"></div>
+                                <div class="addTask-div"><input id="title" class="input-div"
+                                        placeholder="Enter a title"></div>
                             </div>
                             <div class="left-side-div">
                                 <div class="addTask-input-title">Description</div>
-                                <div class="addTask-div"><textarea class="description-div"
+                                <div class="addTask-div"><textarea id="description" class="description-div"
                                         placeholder="Enter a Description"></textarea></div>
                             </div>
                             <div class="left-side-div">
@@ -85,8 +90,8 @@
                                         <div id="dropdownTask1" class="dropdown-closed">
 
                                             <li class="listedElement">New category</li>
-                                            <li class="listedElement">Sales</li>
-                                            <li class="listedElement">Backoffice</li>
+                                            <li id="sales" class="listedElement">Sales</li>
+                                            <li id="backoffice" class="listedElement">Backoffice</li>
 
                                         </div>
                                     </div>
@@ -101,7 +106,7 @@
                                         <div class="input-text-title">Select contacts to assign</div>
                                         <div id="dropdownTask2" class="dropdown-closed">
 
-                                            <li class="listedElement">You <input type="checkbox"></li>
+                                            <li class="listedElement">You <input id="currentUser" type="checkbox"></li>
                                             <li class="listedElement">Invite new contact <img
                                                     style="height:15px; margin-right: 4px"
                                                     src="assets/img/contacts.png">
@@ -130,14 +135,14 @@
                             <div class="right-side-div">
                                 <div class="addTask-input-title">Prio</div>
                                 <div class="btn-container">
-                                    <button class="btn">Urgent <img src="assets/img/urgent_arrow.png"></button>
-                                    <button class="btn">Medium <img src="assets/img/medium_arrow.png"></button>
-                                    <button class="btn">Low <img src="assets/img/low_arrow.png"></button>
+                                    <button id="urgent" class="btn">Urgent <img src="assets/img/urgent_arrow.png"></button>
+                                    <button id="medium" class="btn">Medium <img src="assets/img/medium_arrow.png"></button>
+                                    <button id="low" class="btn">Low <img src="assets/img/low_arrow.png"></button>
                                 </div>
 
                                 <div class="footer-div">
                                     <button class="footer-btn-clear">Clear<img src="assets/img/x.png"></button>
-                                    <button class="footer-btn-create" style="width: 170px;">Create task<img
+                                    <button onclick="createTask()" class="footer-btn-create" style="width: 170px;">Create task<img
                                             src="assets/img/clear.png"></button>
                                 </div>
                             </div>

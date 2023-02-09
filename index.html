@@ -12,15 +12,7 @@
     <script src="script.js"></script>
     <script src="js/mini_backend.js"></script>
     <script>
-
         setURL('https://dominik-niemietz.developerakademie.com/smallest_backend_ever');
-
-        let users = [];
-
-        async function init() {
-            await downloadFromServer();
-            users = JSON.parse(backend.getItem('users')) || [];
-        }
     </script>
 
 
