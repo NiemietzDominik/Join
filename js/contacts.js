@@ -2,70 +2,81 @@ let userName;
 let email;
 let phoneNumber;
 
+let no_value = '';
+
 let filteredUsers = [];
 let sortedAlphabet = [];
-//let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 async function contactList() {
     await init(); // loading array with Users
     loadContact();
 }
 
+
+// functions that load and generate users into contact list | Start
+
 function loadContact() {
-    sortUser(); //Alphabetically sort array with Users  + show`s array in console.log after sorting
-    console.table('das sind die alphabetisch sortierten User ', users);
+    sortUserAlphabetically(); 
 
     let firstLetters = users.map(firstChar => firstChar.name[0].toUpperCase()); //generate newArray of firstLetters from User
-    console.log('Das sind die Erstbuchstaben vom Vornamen', firstLetters);
 
-    filterCharArray(firstLetters); // Filters all char`s that are more than 2x in this array
-    console.log('hier das gefilterte array ohne Buchstaben dublikate', sortedAlphabet);
-
+    filterCharArray(firstLetters); // Filters all char`s that are more than 1x in this array
     setCharDiv(sortedAlphabet, firstLetters);
 }
 
 function setCharDiv(sortedAlphabet, firstLetters) {
+    addUserToSortList() // pushes sorted Users into newArray of filteredUsers
+    pushUserIntoContactList(sortedAlphabet, firstLetters, filteredUsers)
+}
 
-    addUserToSortList() // filtert die User im Array nach Buchstaben
-
-    console.log('die gefilterten user',filteredUsers)
-
+function pushUserIntoContactList(sortedAlphabet, filteredUsers) {
     for (let i = 0; i < sortedAlphabet.length; i++) {
-        
-        let list = document.getElementById('contactList'); // Part with div-container which sorts User bei Letters
-        
-        list.innerHTML += `                                        
-            <div id="char${i}">
-           <div id="charRegistery" class="char-container">
-           ${sortedAlphabet[i]}
-           </div>
+        let list = document.getElementById('contactList');
+        generateCharContainer(i, list, sortedAlphabet)
+    }
+}
+
+function generateCharContainer(i, list, sortedAlphabet) {  // div-container which sorts User bei Letters
+    list.innerHTML += `                                       
+            <div class="char-container" id="char${i}">
+           <div id="charRegistery" class="char-registery">
+           <span style="margin-left: 20px">${sortedAlphabet[i]}</span>
+
            <div id="pickUserId${i}" class="pick-user-container">
 
-           </div>   
+           </div> 
+
+           </div>
+            
        </div>`;
 
+    pushUserIntoCharContainer(i, list, sortedAlphabet)
+}
 
-        for (let j = 0; j < filteredUsers[i].length; j++) {  
+function pushUserIntoCharContainer(i) { // d
+    for (let j = 0; j < filteredUsers[i].length; j++) {
 
-            let filteredUserfirstLetterName = filteredUsers[i][j].name.substring(0, 1).toUpperCase();
-            let filteredUserFirstLetterSurname = filteredUsers[i][j].name.split(/\s(.+)/)[1].charAt(0).toUpperCase(); // get first letter of Users Surname
+        let filteredUserfirstLetterName = filteredUsers[i][j].name.substring(0, 1).toUpperCase();
 
-            document.getElementById(`pickUserId${i}`).innerHTML += // Part to push Users into div´s with correct Letter
-            `
-         <div id="clickUser${i}" class="shortcut-name">
-          ${filteredUserfirstLetterName}${filteredUserFirstLetterSurname}
-         </div>
-         <div>
-          <div class="contactList-userName">${filteredUsers[i][j].name}</div>
-          <div class="contactList-userEmail">${filteredUsers[i][j].email}</div>
-          </div>
-            `
-        }
+        let filteredUserFirstLetterSurname = filteredUsers[i][j].name.split(/\s(.+)/)[1].charAt(0).toUpperCase() ?? no_value;
+
+        document.getElementById(`pickUserId${i}`).innerHTML += // push Users into div´s with correct Char
+    `
+       <div onclick="viewUserData()" class="contactList-user">
+     <div id="clickUser${i}_${j}" class="shortcut-name">
+      ${filteredUserfirstLetterName}${filteredUserFirstLetterSurname}
+     </div>
+
+     <div>
+      <div class="contactList-userName">${filteredUsers[i][j].name}</div>
+      <div class="contactList-userEmail"><a style="color:#007CEE;" href="mailto:${filteredUsers[i][j].email}">${filteredUsers[i][j].email}</a></div>
+      </div>
+      </div>
+    `
     }
 }
 
 function filterCharArray(firstLetters) {
-
     firstLetters.forEach(element => {
         if (!sortedAlphabet.includes(element)) {
             sortedAlphabet.push(element);
@@ -74,14 +85,11 @@ function filterCharArray(firstLetters) {
     return sortedAlphabet;
 }
 
-
 function addUserToSortList() {
-
     for (let i = 0; i < sortedAlphabet.length; i++) {
         let filtered = users.filter(user => user.name.toUpperCase().startsWith(sortedAlphabet[i]));
         filteredUsers.push(filtered)
     }
-  
 }
 
 function sortChar(i, firstLetterName) {
@@ -89,24 +97,27 @@ function sortChar(i, firstLetterName) {
     console.log(alphabet);
 }
 
-function sortUser() {
+function sortUserAlphabetically() {
     users.sort(function (a, b) {
         if (a.name.toUpperCase() < b.name.toUpperCase()) return -1;
         if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
         return 0;
     });
-    
 }
 
+// functions that load and generate users into contact list | End
 
+
+
+// functions to create a new contact | Start 
 
 async function createNewContact() {
     getValueOfNewContact();
     closeNewContactDialog();
     await backend.setItem('users', JSON.stringify(users));
     clearContactData();
-    window.location.reload();
-
+    // await backend.deleteItem('users'); delete all User from users Array
+    window.location.reload(); // reloads the page
 }
 
 function getValueOfNewContact() {
@@ -121,8 +132,6 @@ function getValueOfNewContact() {
     }
 
     users.push(newContact);
-    console.log('user', users);
-
 }
 
 function clearContactData() {
@@ -143,3 +152,5 @@ function closeNewContactDialog() {
     document.getElementById('new-contact-container').classList.add('d-none');
     closeGreyBackground();
 }
+
+// functions to create a new Contact | End

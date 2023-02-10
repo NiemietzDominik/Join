@@ -35,7 +35,7 @@ b {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .content-container {
@@ -218,17 +218,22 @@ b {
 /* width */
 ::-webkit-scrollbar {
     width: 7px;
+    height: 4px;
+    display: block;
+    
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
+    background: transparent;
     border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
+   height:4px;
     border-radius: 5px;
 }
 
@@ -238,7 +243,26 @@ b {
 }
 
 /* Styling for scrollbar end*/
+.contacts-container::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 10px; 
+   
+}
 
+.contactList-user::-webkit-scrollbar-track-piece:end{
+    background: transparent;
+    margin-right: 40px;
+}
+.contactList-user::-webkit-scrollbar-track-piece:start{
+    background: transparent;
+    margin-Left: 40px;
+}
+
+.contacts-container::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 10px;
+   
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

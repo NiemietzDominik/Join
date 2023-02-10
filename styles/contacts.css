@@ -6,9 +6,9 @@ b {
 .contacts-container {
     width: 700px;
     background: white;
-    height: calc(100% - 90px);
-    margin-top: 90px;
     overflow-y: scroll;
+    height: calc(100vh - 90px);
+    margin-top: 90px;
     box-shadow: 1px 1px 6px 1px #a9a9a9 inset;
 }
 
@@ -280,30 +280,30 @@ b {
 
 .scroll-div {
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    height: fit-content;
-    background-color: rgb(227, 227, 227);
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
 }
 
-.char-container {
+.char-registery {
     display: flex;
-    align-items: center;
-    width: 300px;
-    height: 60px;
+    flex-direction: column;
+    width: 350px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 120%;
-    border-bottom: 1px solid black;
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.char-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .pick-user-container {
@@ -312,16 +312,21 @@ b {
     flex-direction: column;
     align-items: start;
     width: 100%;
+    border-top: 1px solid #D1D1D1;
+    margin-top: 20px;
 }
 
 .shortcut-name {
-    width: 42px;
+    min-width: 42px;
     height: 42px;
+    margin-right: 20px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
     background: blue;
+    border-color:white;
     color: white;
 }
 
@@ -339,4 +344,25 @@ b {
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
+}
+
+.contactList-user{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    overflow-x: scroll;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contactList-user:hover{
+    cursor: pointer;
+    transition: 125ms ease-in-out;
+    background: linear-gradient(0deg, #f2f2f2, transparent);
 }
