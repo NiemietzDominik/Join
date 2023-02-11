@@ -16,7 +16,7 @@ async function contactList() {
 // functions that load and generate users into contact list | Start
 
 function loadContact() {
-    sortUserAlphabetically(); 
+    sortUserAlphabetically();
 
     let firstLetters = users.map(firstChar => firstChar.name[0].toUpperCase()); //generate newArray of firstLetters from User
 
@@ -61,17 +61,18 @@ function pushUserIntoCharContainer(i) { // d
         let filteredUserFirstLetterSurname = filteredUsers[i][j].name.split(/\s(.+)/)[1].charAt(0).toUpperCase() ?? no_value;
 
         document.getElementById(`pickUserId${i}`).innerHTML += // push Users into div´s with correct Char
-    `
-       <div onclick="viewUserData()" class="contactList-user">
+            `
+       <div onclick="viewUserData(${i})" class="contactList-user">
      <div id="clickUser${i}_${j}" class="shortcut-name">
       ${filteredUserfirstLetterName}${filteredUserFirstLetterSurname}
      </div>
 
      <div>
-      <div class="contactList-userName">${filteredUsers[i][j].name}</div>
-      <div class="contactList-userEmail"><a style="color:#007CEE;" href="mailto:${filteredUsers[i][j].email}">${filteredUsers[i][j].email}</a></div>
+      <div id="contactName" class="contactList-userName">${filteredUsers[i][j].name}</div>
+      <div id="contactEmail" class="contactList-userEmail"><a style="color:#007CEE;">${filteredUsers[i][j].email}</a></div>
       </div>
       </div>
+
     `
     }
 }
@@ -106,6 +107,70 @@ function sortUserAlphabetically() {
 }
 
 // functions that load and generate users into contact list | End
+
+function viewUserData(i) {
+    let viewDataTemplate = document.getElementById('view-contact');
+    viewDataTemplate.classList.toggle("slide-in");
+
+    let getVariable = filteredUsers[i];
+    console.log(getVariable);
+
+
+
+    for (let j = 0; j < filteredUsers[i].length; j++) {
+
+        let filteredUserfirstLetterName = filteredUsers[i][j].name.substring(0, 1).toUpperCase();
+
+        let filteredUserFirstLetterSurname = filteredUsers[i][j].name.split(/\s(.+)/)[1].charAt(0).toUpperCase() ?? no_value;
+
+
+        viewDataTemplate.innerHTML = `
+    <div>
+    <div class="view-contact-header">
+        <div class="contactList-user-view-contact">
+            <div id="shortcut_name" class="shortcut-name shortcut-name-view-contact">
+                
+      ${filteredUserfirstLetterName}${filteredUserFirstLetterSurname}
+            </div>
+
+            <div>
+                <div id="contactName"
+                    class="contactList-userName contact-list-username-view-contact">${filteredUsers[i][j].name}
+                </div>
+                <div id="contactEmail" class="contactList-userEmail">
+                    <a>
+                        <img style="margin-right: 10px;"
+                            src="assets/img/plus_icon.png">UserEmail
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="view-contact-middlePart">
+        <div>Contact Information</div>
+        <div class="edit-contact-button"><img src="assets/img/edit_pen_icon.png"> Edit Contact
+        </div>
+    </div>
+
+    <div class="view-contact-footer">
+        <div class="contact-info-div">
+            <div style="font-weight: 700; margin-bottom: 10px;">Email</div>
+            <div><a href="mailto:${filteredUsers[i][j].email}">
+            ${filteredUsers[i][j].email}
+                </a></div>
+        </div>
+        <div class=" contact-info-div">
+            <div style="font-weight: 700; margin-bottom: 10px;">Phone</div>
+            <div>${filteredUsers[i][j].phoneNumber}</div>
+        </div>
+    </div>
+</div>`
+
+    }
+}
 
 
 

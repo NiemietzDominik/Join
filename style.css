@@ -6,6 +6,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+font {
+    font-family: Inter;
+}
+
 a {
     text-decoration: none;
     color: White;
@@ -128,6 +132,7 @@ b {
 }
 
 .nav-link {
+    color: white;
     text-align: left;
     width: 90px;
 }
