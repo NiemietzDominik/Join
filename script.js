@@ -22,14 +22,7 @@ function closeGreyBackground() {
 }
 
 function generateNewColor() {
-const limitValue = 256;
-let red = getRandomNumber(limitValue);
-let green = getRandomNumber(limitValue);
-let blue = getRandomNumber(limitValue);
-
-return `rgb(${+ red},${+ green},${+ blue})`
+let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+ return color;
 }
 
-function getRandomNumber(limitValue){
-    return Math.floor(Math.random() * limitValue);
-}
