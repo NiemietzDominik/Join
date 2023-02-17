@@ -26,6 +26,7 @@ function loadContact() {
 
 function setCharDiv(sortedAlphabet, firstLetters) {
     addUserToSortList() // pushes sorted Users into newArray of filteredUsers
+    console.log(filteredUsers);
     pushUserIntoContactList(sortedAlphabet, firstLetters, filteredUsers)
 }
 
@@ -53,7 +54,9 @@ function generateCharContainer(i, list, sortedAlphabet) {  // div-container whic
     pushUserIntoCharContainer(i, list, sortedAlphabet)
 }
 
-function pushUserIntoCharContainer(i) { // d
+function pushUserIntoCharContainer(i) { 
+
+
     for (let j = 0; j < filteredUsers[i].length; j++) {
 
         let filteredUserfirstLetterName = filteredUsers[i][j].name.substring(0, 1).toUpperCase();
@@ -74,7 +77,14 @@ function pushUserIntoCharContainer(i) { // d
       </div>
 
     `
+
+    randomBackgroundColor = document.getElementById(`clickUser${i}_${j}`);
+
+    randomBackgroundColor.style.backgroundColor = filteredUsers[i][j].color;
+
+    
     }
+
 }
 
 function filterCharArray(firstLetters) {
@@ -115,8 +125,6 @@ function viewUserData(i) {
     let getVariable = filteredUsers[i];
     console.log(getVariable);
 
-
-
     for (let j = 0; j < filteredUsers[i].length; j++) {
 
         let filteredUserfirstLetterName = filteredUsers[i][j].name.substring(0, 1).toUpperCase();
@@ -128,7 +136,7 @@ function viewUserData(i) {
     <div>
     <div class="view-contact-header">
         <div class="contactList-user-view-contact">
-            <div id="shortcut_name" class="shortcut-name shortcut-name-view-contact">
+            <div id="shortcut_name${j}" class="shortcut-name shortcut-name-view-contact">
                 
       ${filteredUserfirstLetterName}${filteredUserFirstLetterSurname}
             </div>
@@ -169,6 +177,11 @@ function viewUserData(i) {
     </div>
 </div>`
 
+randomBackgroundColor = document.getElementById(`shortcut_name${j}`);
+
+randomBackgroundColor.style.backgroundColor = filteredUsers[i][j].color;
+
+
     }
 }
 
@@ -181,7 +194,7 @@ async function createNewContact() {
     closeNewContactDialog();
     await backend.setItem('users', JSON.stringify(users));
     clearContactData();
-    // await backend.deleteItem('users'); delete all User from users Array
+    // await backend.deleteItem('users');// delete all User from users Array
     window.location.reload(); // reloads the page
 }
 
@@ -190,10 +203,13 @@ function getValueOfNewContact() {
     email = document.getElementById('newContactEmail').value;
     phoneNumber = document.getElementById('newContactNumber').value;
 
+    assignedRandomColor = generateNewColor();
+
     let newContact = {
         'name': userName,
         'email': email,
         'phoneNumber': phoneNumber,
+        'color': assignedRandomColor,
     }
 
     users.push(newContact);

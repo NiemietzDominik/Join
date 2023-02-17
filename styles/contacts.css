@@ -350,7 +350,7 @@ padding: 10px;
     align-items: center;
     border-radius: 100%;
     background: blue;
-    border-color: white;
+    border: 1px solid white;
     color: white;
 }
 
