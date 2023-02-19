@@ -349,7 +349,7 @@ padding: 10px;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    background: blue;
+    background: var(--userColor);
     border: 1px solid white;
     color: white;
 }
@@ -441,7 +441,7 @@ padding: 10px;
 
 .shortcut-name-view-contact {
     height: 120px;
-    width: 120px;
+    min-width: 120px;
     font-size: 47px;
 }
 

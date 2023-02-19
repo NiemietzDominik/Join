@@ -43,7 +43,7 @@ function generateCharContainer(i, list, sortedAlphabet) {  // div-container whic
            <div id="charRegistery" class="char-registery">
            <span style="margin-left: 20px">${sortedAlphabet[i]}</span>
 
-           <div id="pickUserId${i}" class="pick-user-container">
+           <div id="userBoxId${i}" class="pick-user-container">
 
            </div> 
 
@@ -54,8 +54,7 @@ function generateCharContainer(i, list, sortedAlphabet) {  // div-container whic
     pushUserIntoCharContainer(i, list, sortedAlphabet)
 }
 
-function pushUserIntoCharContainer(i) { 
-
+function pushUserIntoCharContainer(i) {
 
     for (let j = 0; j < filteredUsers[i].length; j++) {
 
@@ -63,7 +62,7 @@ function pushUserIntoCharContainer(i) {
 
         let filteredUserFirstLetterSurname = filteredUsers[i][j].name.split(/\s(.+)/)[1].charAt(0).toUpperCase() ?? no_value;
 
-        document.getElementById(`pickUserId${i}`).innerHTML += // push Users into div´s with correct Char
+        document.getElementById(`userBoxId${i}`).innerHTML += // push Users into div´s with correct Char
             `
        <div onclick="viewUserData(${i})" class="contactList-user">
      <div id="clickUser${i}_${j}" class="shortcut-name">
@@ -75,14 +74,11 @@ function pushUserIntoCharContainer(i) {
       <div id="contactEmail" class="contactList-userEmail"><a style="color:#007CEE;">${filteredUsers[i][j].email}</a></div>
       </div>
       </div>
-
     `
-
-    randomBackgroundColor = document.getElementById(`clickUser${i}_${j}`);
-
-    randomBackgroundColor.style.backgroundColor = filteredUsers[i][j].color;
-
-    
+        randomBackgroundColor = document.getElementById(`clickUser${i}_${j}`);
+        randomBackgroundColor.style.backgroundColor = filteredUsers[i][j].color
+        console.log(randomBackgroundColor.style.backgroundColor)
+        
     }
 
 }
@@ -105,7 +101,7 @@ function addUserToSortList() {
 
 function sortChar(i, firstLetterName) {
     alphabet.push(firstLetterName);
-    console.log(alphabet);
+    
 }
 
 function sortUserAlphabetically() {
@@ -122,11 +118,8 @@ function viewUserData(i) {
     let viewDataTemplate = document.getElementById('view-contact');
     viewDataTemplate.classList.toggle("slide-in");
 
-    let getVariable = filteredUsers[i];
-    console.log(getVariable);
-
     for (let j = 0; j < filteredUsers[i].length; j++) {
-
+        
         let filteredUserfirstLetterName = filteredUsers[i][j].name.substring(0, 1).toUpperCase();
 
         let filteredUserFirstLetterSurname = filteredUsers[i][j].name.split(/\s(.+)/)[1].charAt(0).toUpperCase() ?? no_value;
@@ -136,7 +129,7 @@ function viewUserData(i) {
     <div>
     <div class="view-contact-header">
         <div class="contactList-user-view-contact">
-            <div id="shortcut_name${j}" class="shortcut-name shortcut-name-view-contact">
+            <div id="shortcut_name${i}${j}" class="shortcut-name shortcut-name-view-contact">
                 
       ${filteredUserfirstLetterName}${filteredUserFirstLetterSurname}
             </div>
@@ -176,11 +169,11 @@ function viewUserData(i) {
         </div>
     </div>
 </div>`
+        
+        randomBackgroundColorViewContact = document.getElementById(`shortcut_name${i}${j}`);
+        randomBackgroundColor = document.getElementById(`clickUser${i}_${j}`);
 
-randomBackgroundColor = document.getElementById(`shortcut_name${j}`);
-
-randomBackgroundColor.style.backgroundColor = filteredUsers[i][j].color;
-
+        document.documentElement.style.setProperty('--userColor', filteredUsers[i][j].color);
 
     }
 }
@@ -194,7 +187,7 @@ async function createNewContact() {
     closeNewContactDialog();
     await backend.setItem('users', JSON.stringify(users));
     clearContactData();
-    // await backend.deleteItem('users');// delete all User from users Array
+    //await backend.deleteItem('users');// delete all User from users Array
     window.location.reload(); // reloads the page
 }
 
